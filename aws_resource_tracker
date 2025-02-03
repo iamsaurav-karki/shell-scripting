@@ -19,4 +19,4 @@ echo "##############################"
 aws lambda list-functions
 
 echo "iam resource tracker"
-echo iam list-users
+aws iam list-users
