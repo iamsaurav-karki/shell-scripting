@@ -1,0 +1,22 @@
+#!/bin/bash
+
+
+# Author : Saurav Karki
+# Date : 3rd Feb 25
+
+set -x 
+
+echo "tacks s3 resources"
+echo "##################################3" 
+aws s3 ls
+
+echo " tracks ec2 resources "
+echo "#################################"
+aws ec2 describe-instances | jp .Reservations[].Instances[].InstanceId
+
+echo " lambda resource tracker"
+echo "##############################" 
+aws lambda list-functions
+
+echo "iam resource tracker"
+echo iam list-users
